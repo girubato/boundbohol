@@ -4,10 +4,11 @@ Installation Procedure
 3. create database
 4. install wordpress
 5. delete all the default themes in the themes folder
-6. download the boundbohol theme in github
+6. download the boundbohol theme in github https://github.com/jpestilos/boundbohol.git
 7. add the boundbohol theme in the themes folder
 8. activate the boundbohol theme
 
+--------------------------------------------------------------------------------------
 
 Edits made in wp-advanced-search plugin
 1. renamed the folder wp-advanced-search to search
