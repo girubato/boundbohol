@@ -15,8 +15,18 @@ This simple theme was built using Bootstrap.
 @import url('css/bootstrap.min.css'); 
 @import url('css/bootstrap-theme.min.css'); 
 @import url('css/datetimepicker.min.css'); 
+@import url('css/selectize.css'); 
 
 body { background: #eaeaea; font-size: 16px; line-height: 1.5em; color: #666; font-weight: 300; }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 /*  base : clear
 /* ------------------------------------ */
@@ -62,6 +72,7 @@ body { background: #eaeaea; font-size: 16px; line-height: 1.5em; color: #666; fo
 	min-height: 300px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+    z-index: -1;
 }
 
 .how-it-works {

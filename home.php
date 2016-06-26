@@ -38,21 +38,21 @@
 		<div class="home-container-inner">	
 				<div class="group">
 					<form class="form-inline" action="<?php echo rand(0, 9).rand(0, 9).rand(0, 9).rand(0, 9).rand(0, 9).rand(0, 9) ?>" method="post">
-						<div class="form-group">
-							<select class="form-control" name="input_origin" id="input_origin" style="width: 200px; color: gray;">
-								<option selected hidden disabled>Origin</option>
-								<option>SeaPort</option>
-								<option>Airport</option>
+						<div class="form-group" style="padding-top: 5px;">
+							<select class="form-control" placeholder="Origin" id="select_origin" name="select_origin" style="width: 180px;" required>
+								<option>Tubigon Sea Port</option>
+								<option>Tagbilaran Sea Port</option>
+								<option>Tagbilaran Air Port</option>
 							</select>
 						</div>
 						<div class="form-group">
-							<input class="form-control" name="input_arrival" id="input_arrival" placeholder="Arrival Date">
+							<input class="form-control" name="input_arrival" id="input_arrival" placeholder="Arrival Date" type="datetime" required />
 						</div>
 						<div class="form-group">
-							<input class="form-control" name="input_departure" id="input_departure" placeholder="Departure Date">
+							<input class="form-control" name="input_departure" id="input_departure" placeholder="Departure Date" type="datetime" required />
 						</div>
 						<div class="form-group">
-							<input type="number" class="form-control" name="input_number" id="input_number" placeholder="No. of Guests">
+							<input type="number" class="form-control" name="input_number" id="input_number" placeholder="No. of Guests" required />
 						</div>
 						<button type="submit" class="btn btn-default">Explore Bohol</button>
 					</form>
@@ -60,6 +60,10 @@
                         jQuery(function () {
                             jQuery('#input_arrival').datetimepicker();
                             jQuery('#input_departure').datetimepicker();
+                            jQuery('#select_origin').selectize({
+                                create: true,
+                                createOnBlur: true
+                            });
                         });
                     </script>
 				</div>
