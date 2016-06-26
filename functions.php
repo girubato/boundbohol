@@ -142,12 +142,13 @@
         echo $html;
     }
 
-	function theme_add_bootstrap() {
-		wp_register_script( 'scripts-js', get_template_directory_uri() . '/js/scripts.js', 'jquery', '1.0',  false);
-		wp_enqueue_script( 'scripts-js' );
-		wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array(), '3.3.6', true);
+	function theme_add_custom_js() {
+		wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js', 'jquery', '1.0', true);
+		wp_enqueue_script('moment-js', get_template_directory_uri() . '/js/moment.min.js', 'moment', '2.0.0', true);
+		wp_enqueue_script('datetimepicker-js', get_template_directory_uri() . '/js/datetimepicker.min.js', 'datetimepicker', '4.17.37', true);
+		wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.6', true);
 	}
-	add_action('wp_enqueue_scripts', 'theme_add_bootstrap');
+	add_action('wp_enqueue_scripts', 'theme_add_custom_js');
     add_theme_support('post-thumbnails'); 
 
 	require_once('search/wpas.php');
