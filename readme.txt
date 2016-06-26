@@ -10,10 +10,26 @@ Installation Procedure
 
 --------------------------------------------------------------------------------------
 
-Edits made in wp-advanced-search plugin
-1. renamed the folder wp-advanced-search to search
-2. changed wp-admin to admn in ./src/Factory.php file. lines 197 and 259.
-3. removed the caching of results in ./js/scripts.js. lines 122 to 130.
+Required Plugin - Custom Field Suite
+  -- this will be used for adding additional information like address, fees, description and etc...
+  -- this was chosen instead of ACF(Advanced Custom Fields) because this is easier to use and is lightweight
+  -- https://github.com/mgibbs189/custom-field-suite
+  -- http://docs.customfieldsuite.com/
+Installation Procedure
+1. Download the plugin
+2. Edit the wp-admin keywords inside the includes/upgrade.php file
+3. Activate the plugin
+
+--------------------------------------------------------------------------------------
+
+Required Feature - Wp Advanced Search
+  -- https://github.com/bootsz/wp-advanced-search
+  -- wpadvancedsearch.com 
+Installation Procedure
+1. copy the wp-advanced-search folder into the theme
+2. rename the folder wp-advanced-search to search
+3. changed wp-admin to admn in ./src/Factory.php file. lines 197 and 259.
+4. removed the caching of results in ./js/scripts.js. lines 122 to 130.
 /*
     if (storage != null) {
         log("localStorage found");
@@ -22,7 +38,7 @@ Edits made in wp-advanced-search plugin
         setPage(1);
         setRequest($(__WPAS.FORM).serialize());
 //  }
-4. added the automatic loading functionality while scrolling down the results in ./js/scripts.js. insert the code below on line number 177.
+5. added the automatic loading functionality while scrolling down the results in ./js/scripts.js. insert the code below on line number 177.
                         $(window).scroll(function() {
                             if ($(window).scrollTop() >= (($(document).height() - $(window).height()) - $('button#wpas-load-btn').innerHeight())) {
                                 if( $('button#wpas-load-btn').is(':hidden') ){
@@ -34,6 +50,7 @@ Edits made in wp-advanced-search plugin
                             }
                         });
 
+--------------------------------------------------------------------------------------
 
 Needed Categories
 1. Attractions
@@ -41,13 +58,8 @@ Needed Categories
 3. Restaurants
 4. Transportations
 
+--------------------------------------------------------------------------------------
 
-What are needed in a Post for Attractions Category
-1. Title
-2. Category = Attractions
-3. Featured Image
-4. Content - this is still debatable if we should be using this for displaying the information like entrance fee, municipal fee and etc. I still haven't decided where to put the address, operating hours, estimated time of stay and etc...
-5. Excerpt - will be used as the description for the pop-up?
-6. Custom Fields - This is what we are using for knowing what attraction type this post belongs to 
-   - name = attraction_type ==> value = Extreme Adventure (The value should be exactly the same in what's displayed in the checkboxes under Attractions Tab)
-   - name = attraction_type ==> value = Mountains
+Posts for Attractions Category
+ -- still finalizing how to maximize the use of Custom Field Suite
+ -- will have to decide the final keywords to be used
