@@ -17,7 +17,7 @@ Required Plugin - Custom Field Suite
   -- http://docs.customfieldsuite.com/
 Installation Procedure
 1. Download the plugin
-2. Edit the wp-admin keywords inside the includes/upgrade.php file
+2. Edit the wp-admin keywords to admn inside the includes/upgrade.php file
 3. Activate the plugin
 
 --------------------------------------------------------------------------------------
