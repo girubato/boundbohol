@@ -14,7 +14,7 @@
 	
 	<link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
     <?php wp_enqueue_script("jquery"); ?>
-	
+	<?php wp_head(); ?>
 </head>
 
 <body>
@@ -46,16 +46,22 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<input type="datetime" class="form-control" name="input_arrival" id="input_arrival" placeholder="Arrival Date">
+							<input class="form-control" name="input_arrival" id="input_arrival" placeholder="Arrival Date">
 						</div>
 						<div class="form-group">
-							<input type="date" class="form-control" name="input_departure" id="input_departure" placeholder="Departure Date">
+							<input class="form-control" name="input_departure" id="input_departure" placeholder="Departure Date">
 						</div>
 						<div class="form-group">
 							<input type="number" class="form-control" name="input_number" id="input_number" placeholder="No. of Guests">
 						</div>
 						<button type="submit" class="btn btn-default">Explore Bohol</button>
 					</form>
+                    <script type="text/javascript">
+                        jQuery(function () {
+                            jQuery('#input_arrival').datetimepicker();
+                            jQuery('#input_departure').datetimepicker();
+                        });
+                    </script>
 				</div>
 				
 		</div>
