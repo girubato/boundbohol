@@ -23,6 +23,7 @@ Installation Procedure
 --------------------------------------------------------------------------------------
 
 Required Feature - Wp Advanced Search
+  -- This is already included in the boundbohol theme. This is just a reminder.
   -- https://github.com/bootsz/wp-advanced-search
   -- wpadvancedsearch.com 
 Installation Procedure
