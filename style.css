@@ -40,8 +40,8 @@ input[type=number] {
 #wrapper { min-width: 1024px; height: 100%; }
 .container { padding: 0 20px; }
 .container-inner { position: relative; width: 100%; margin: 0 auto; }
-.main { background-color: #fff!important; position: relative; background: url(img/sidebar/s-right-s2.png) repeat-y right 0; }
-.main-inner { position: relative; min-height: 600px; padding-left: 340px; padding-right: 260px; background: url(img/sidebar/s-left.png) repeat-y left 0; }
+.main { background-color: #fff!important; position: relative; }
+.main-inner { position: relative; min-height: 600px; padding-left: 340px; background: url(img/sidebar/s-left.png) repeat-y left 0; }
 .content { width: 100%; position: relative; float: right; }
 .pad { padding: 30px 30px 20px; }
 
@@ -113,18 +113,19 @@ input[type=number] {
 .desc {
 	text-align: center;
 }
-*/
 
 /*  base : sidebar
 /* ------------------------------------ */
 .sidebar { padding-bottom: 20px; position: relative; }
 .sidebar .pad { padding-left: 20px; padding-right: 20px; }
 
+.s0 { width: 680px; float: left; margin-left: -680px; }
+
 /* sidebar primary */
 .s1 { width: 340px; float: left; margin-left: -340px; }
 
 /* sidebar secondary */
-.s2 { width: 260px; float: right; margin-right: -260px; position: relative; right: -100%; }
+.s2 { width: 340px; float: right; margin-right: -340px; position: relative; right: -100%; }
 
 /* ------------------------------------------------------------------------- *
  *  Section: Footer
@@ -150,6 +151,39 @@ input[type=number] {
     width: 60%;
 }
 
+.content-pad {
+    padding: 5px 5px 5px 5px;
+}
+
+.content-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+}
+
+.content-left {
+    float: left;
+    width: 200px;
+    height: 200px;
+}
+
+.content-right {
+    float: right;
+    width: 85px;
+    height: 200px;
+}
+
+.content-middle {
+    float: none;
+    width: 450px;
+    height: 200px;
+    display: inline-block;
+    padding: 5px;
+}
+
 .float-left {
     float: left;
 }
@@ -162,8 +196,8 @@ input[type=number] {
     position: relative;
     width: 100%;
     margin: 0 auto;
-    text-align: center;
-    padding: 5px 5px;
+    text-align: right;
+    padding: 10px 10px;
 }
 
 .content-search-box {

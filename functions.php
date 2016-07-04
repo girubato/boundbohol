@@ -1,6 +1,6 @@
 <?php
 
-    function more_info_modal($id='', $title='') {
+    function more_info_modal($id='', $title='', $return=true) {
         list($the_custom_amount_meta_pop_up, $update_defaults_script) = the_custom_amount_meta_pop_up('total-amount-post-id-' . $id);
         $html = '
             <button onclick="'.$update_defaults_script.'" type="button" class="btn btn-primary" data-toggle="modal" data-target="#post-modal-id-'.$id.'"> More Info </button>
@@ -61,6 +61,7 @@
                 </div>
             </div>
         ';
+        if ($return) return $html;
         echo $html;
     }
 

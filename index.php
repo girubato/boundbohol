@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		
-        <div id="wpas-results" class="group pad"></div>
+        <div id="wpas-results" class="content-pad"></div>
 
     </section><!--/.content-->
 

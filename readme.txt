@@ -61,6 +61,35 @@ Needed Categories
 
 --------------------------------------------------------------------------------------
 
-Posts for Attractions Category
- -- still finalizing how to maximize the use of Custom Field Suite
- -- will have to decide the final keywords to be used
+Info needed in the Attraction Category Posts
+1. Title
+2. Featured Image = 200 x 200 image - we must create a default image if this is not available.
+3. Category = Attractions
+4. Custom Fields
+  - Name = attraction_type is the needed keyword for setting the category filter of the Attraction
+  - Value = e.g. Mountains, Beaches, etc...
+  - Just add another attraction_type with a different value if the Attraction is under multiple category filters.
+5. Field Group for Attractions Category - please see details below on the details in creating the field group.
+
+Creating Field Groups for Attractions Category
+Field Groups -> Add New
+1. Title = Attractions Additional Information
+2. Fields = (Label - Name - Field Type - Default Value - Validation - Notes) - Name is the only critical field used in the codes.
+  - Address - address - Text - none - required - Up To You
+  - Estimated Time of Stay - etos - Text - Estimated Time of Stay: - required - Up to You
+  - Description - description - Textarea - none - required - Up to You
+  - Fees - fees - Textarea - none - not required - This is still temporary until the fees feature is finalized.
+  - Just add more if needed.
+3. Placement Rules
+  - Post Types = post
+  - User Roles = blank
+  - Posts = blank
+  - Taxonomy Terms = (category)Attractions
+  - Page Templates = blank
+4. Extras - Up to You
+Field Groups -> Tools
+  - We can use the import/export feature and commit the necessary field groups in the boundbohol theme.
+
+note: We can also create just one Field Group for all Categories but let's just separate them for now. We can just consolidate all of them later if we really need to.
+
+--------------------------------------------------------------------------------------

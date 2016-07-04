@@ -1,4 +1,9 @@
-	<div class="sidebar s1">
+<div class='sidebar s0'>
+    <div class="pad">
+    </div>
+</div>
+
+<div class="sidebar s1">
 		<div class="pad">
 		
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -76,14 +81,8 @@
 				
 		</div>
 	</div><!--/.sidebar-->
-	
+
 	<div class="sidebar s2">
 		<div class="pad">
-			
-			
-			
-			
-			
-			
 		</div>
 	</div><!--/.sidebar-->
