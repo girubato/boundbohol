@@ -75,10 +75,12 @@ Creating Field Groups for Attractions Category
 Field Groups -> Add New
 1. Title = Attractions Additional Information
 2. Fields = (Label - Name - Field Type - Default Value - Validation - Notes) - Name is the only critical field used in the codes.
-  - Address - address - Text - none - required - Up To You
-  - Estimated Time of Stay - etos - Text - Estimated Time of Stay: - required - Up to You
-  - Description - description - Textarea - none - required - Up to You
-  - Fees - fees - Textarea - none - not required - This is still temporary until the fees feature is finalized.
+  - Address - address - Text - none - nr - Up To You
+  - Estimated Time of Stay - etos - Text - Estimated Time of Stay: - nr - Up to You
+  - Description - description - Textarea - none - nr - Up to You
+  - Fees - fees - Textarea - none - nr - Up to You :: (This is still temporary until the fees feature is finalized.)
+  - Photo Gallery Id - photo_gallery_id - Text - 0 - nr - Up to You
+  - Video Gallery Id - video_gallery_id - Text - 0 - nr - Up to You
   - Just add more if needed.
 3. Placement Rules
   - Post Types = post
@@ -91,5 +93,21 @@ Field Groups -> Tools
   - We can use the import/export feature and commit the necessary field groups in the boundbohol theme.
 
 note: We can also create just one Field Group for all Categories but let's just separate them for now. We can just consolidate all of them later if we really need to.
+
+--------------------------------------------------------------------------------------
+
+Required Plugin - Photo Gallery by WebDorado
+  -- note that we will be using the thumbnails view because I wasn't able to output the slideshow view in the boundbohol theme. (I'm still not sure why.)
+  -- we also need to buy the pro version if we want to use the slideshow with filmstrip.
+  -- just look at the other available options of the free version and see if which style is better.
+  -- https://web-dorado.com/
+  -- demo site: http://wpdemo.web-dorado.com/thumbnails-view-2/
+Installation Procedure
+1. Install the plugin normally using the Add New feature in Plugins page.
+2. Under Photo Gallery -> Options -> Global options -> Images directory: change wp-content to content. - This is only needed if you've changed the wordpress directories.
+Use
+1. Add Galleries/Images. should create separate photo and video galleries for every post.
+2. Generate Shortcode. edit the options under Thumbnails view as you see fit and generate the shortcode.
+3. Remember the id given in the shortcode and input it in the Photo Gallery Id or Video Gallery Id fields in their respective posts.
 
 --------------------------------------------------------------------------------------

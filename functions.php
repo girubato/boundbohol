@@ -1,58 +1,71 @@
 <?php
 
-    function more_info_modal($id='', $title='', $return=true) {
-        list($the_custom_amount_meta_pop_up, $update_defaults_script) = the_custom_amount_meta_pop_up('total-amount-post-id-' . $id);
-        $html = '
+    function more_info_modal($post_info=array(), $return=false) {
+        $id = md5(print_r($post_info, true));
+        $update_defaults_script = '';
+        $the_custom_amount_meta_pop_up = '';
+        #list($the_custom_amount_meta_pop_up, $update_defaults_script) = the_custom_amount_meta_pop_up('total-amount-post-id-' . $post_info['post_id']);
+        echo '
             <button onclick="'.$update_defaults_script.'" type="button" class="btn btn-primary" data-toggle="modal" data-target="#post-modal-id-'.$id.'"> More Info </button>
         
             <div class="modal fade large" id="post-modal-id-'.$id.'" tabindex="-1" role="dialog" aria-labelledby="post-label-id-'.$id.'">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <!-- <div class="modal-header">
+                        <!--
+                        <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="modal-title-id-'.$id.'">'.$title.'</h4>
-                        </div> -->
+                        </div>
+                        -->
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-7">
                                     <!-- Nav tabs -->
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#photos" aria-controls="photos" role="tab" data-toggle="tab">Photos</a></li>
-                                        <li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab">Videos</a></li>
-                                    <!-- disabled for now
-                                        <li role="presentation"><a href="#map" aria-controls="map" role="tab" data-toggle="tab">Map</a></li>
-                                        <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
-                                    -->
+                                        <li role="presentation" class="active"><a href="#photos-'.$id.'" aria-controls="photos" role="tab" data-toggle="tab">Photos</a></li>
+                                        <li role="presentation"><a href="#videos-'.$id.'" aria-controls="videos" role="tab" data-toggle="tab">Videos</a></li>
+                                        <!-- disabled for now
+                                        <li role="presentation"><a href="#map-'.$id.'" aria-controls="map" role="tab" data-toggle="tab">Map</a></li>
+                                        <li role="presentation"><a href="#reviews-'.$id.'" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
+                                        -->
                                     </ul>
 
                                     <!-- Tab panes -->
                                     <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane active" id="photos">
-                                        
+                                        <div role="tabpanel" class="tab-pane active" id="photos-'.$id.'">
+        ';
+        if (!empty($post_info['pg_id'])) {
+            echo do_shortcode('[Best_Wordpress_Gallery id="'.$post_info['pg_id'].'"]');
+        }
+        echo '
                                         </div>
-                                        <div role="tabpanel" class="tab-pane" id="videos">
-                                        
+                                        <div role="tabpanel" class="tab-pane" id="videos-'.$id.'">
+        ';
+        if (!empty($post_info['vg_id'])) {
+            echo do_shortcode('[Best_Wordpress_Gallery id="'.$post_info['vg_id'].'"]');
+        }
+        echo '
                                         </div>
-                                    <!-- disabled for now
-                                        <div role="tabpanel" class="tab-pane" id="map">
-                                        
+                                        <!-- disabled for now
+                                        <div role="tabpanel" class="tab-pane" id="map-'.$id.'">
                                         </div>
-                                        <div role="tabpanel" class="tab-pane" id="reviews">
-                                        
+                                        <div role="tabpanel" class="tab-pane" id="reviews-'.$id.'">
                                         </div>
-                                    -->
+                                        -->
                                     </div>
                                 </div>
 
                                 <div class="col-md-5">
-                                    <h4>'.$title.'</h4>
-                                    '.get_the_excerpt().'
-                                    <br>
-                                    <!--
+                                    <div><h4>'.$post_info['title'].'</h4></div>
+                                    <div>'.$post_info['address'].'</div>
+                                    <div>'.$post_info['etos'].'</div>
+                                    <div>'.$post_info['description'].'</div>
+                                    <hr>
+                                    <div>'.$post_info['fees'].'</div>
+                                    <!-- disabled for now
                                     <div>&nbsp;</div>
                                     ' . $the_custom_amount_meta_pop_up . '
                                     <div>&nbsp;</div>
-                                    <div class="total-amount-post" id="total-amount-post-id-'. $id .'-pop-up"></div>
+                                    <div class="total-amount-post" id="total-amount-post-id-'. $post_info['post_id'] .'-pop-up"></div>
                                     -->
                                 </div>
                             </div>
@@ -61,8 +74,6 @@
                 </div>
             </div>
         ';
-        if ($return) return $html;
-        echo $html;
     }
 
     function the_custom_amount_meta_pop_up($total_amount_id='') {
