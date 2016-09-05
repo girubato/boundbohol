@@ -5,39 +5,41 @@
     }
 ?>
 <?php get_header(); ?>
-
-    <section class="content">
-		<div class="content-search-box-div">
-			<div id="attractions-search-box-div">
+<?php get_sidebar('left'); ?>
+<div class="col-sm-6 nopadding">
+<!--    <section class="content">
+		<div class="content-search-box-div"> -->
+		<div class="row">
+		<div class="col-sm-12">
+			<div class="container-fluid">
+			<!-- <div id="attractions-search-box-div"> -->
 				<?php
 					$search = new WP_Advanced_Search('attractions-search-form-search-box');
 					$search->the_form();
 				?>
 			</div>
-			<div id="accommodations-search-box-div" class="display-none">
+			<div class="container-fluid hide">
 				<?php
 					$search = new WP_Advanced_Search('accommodations-search-form-search-box');
 					$search->the_form();
 				?>
 			</div>
-			<div id="restaurants-search-box-div" class="display-none">
+			<div class="container-fluid hide">
 				<?php
 					$search = new WP_Advanced_Search('restaurants-search-form-search-box');
 					$search->the_form();
 				?>
 			</div>
-			<div id="transportations-search-box-div" class="display-none">
+			<div class="container-fluid hide">
 				<?php
 					$search = new WP_Advanced_Search('transportations-search-form-search-box');
 					$search->the_form();
 				?>
 			</div>
 		</div>
-		
-        <div id="wpas-results" class="content-pad"></div>
-
-    </section><!--/.content-->
-
-<?php get_sidebar(); ?>
-
+		</div>
+        <div id="wpas-results"></div>
+ <!--   </section><!--/.content-->
+</div>
+<?php get_sidebar('right'); ?>
 <?php get_footer(); ?>

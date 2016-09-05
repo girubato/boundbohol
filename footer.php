@@ -1,8 +1,8 @@
-				</div><!--/.main-inner-->
-			</div><!--/.main-->			
-		</div><!--/.container-inner-->
+<!--				</div><!--/.main-inner-->
+<!--			</div><!--/.main-->			
+<!--		</div><!--/.container-inner-->
 	</div><!--/.container-->
-	
+</div>	
 	<footer id="footer">
 		<section class="container">
 			<div class="container-inner">
