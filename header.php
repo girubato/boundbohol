@@ -12,23 +12,11 @@
 </head>
 
 <body onload="load_attractions();">
-<div id="wrapper">
-
-	<header id="header">
-	
-		<div class="container group">
-			<div class="container-inner">
-			
-				<div class="group">
-					<img src='<?php echo get_template_directory_uri(); ?>/img/bbohol-logo.png' />
-				</div>
-				
-			</div><!--/.container-inner-->
-		</div><!--/.container-->
-	
-	</header><!--/#header-->
-	
-	<div class="container">
-		<div class="container-inner">			
-			<div class="main">
-				<div class="main-inner group">
+<div class="container-fluid">
+	<div class="row content">
+		<div id="header" class="col-sm-12">
+			<img src='<?php echo get_template_directory_uri(); ?>/img/bbohol-logo.png' />
+		</div>
+	</div>
+	<div class="row content">
+		

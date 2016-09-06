@@ -1,13 +1,13 @@
 <?php
 
 echo "
-<div class='content-container'>
-    <div class='content-left'>
+<div class='row item-border'>
+    <div class='col-xs-3 nopadding'>
 ";
 if (has_post_thumbnail()) {
-    the_post_thumbnail(array(200, 200));
+    the_post_thumbnail(array(170, 170));
 } else {
-    $thumbnail = "<img src='' width=200 height=200 />";
+    $thumbnail = "<img src='' width=170 height=170 />";
     echo $thumbnail;
 }
 
@@ -29,25 +29,22 @@ if (!is_numeric($post_info['vg_id'])) {
 
 echo "
     </div>
-    <div class='content-middle'>
+    <div class='col-xs-7'>
         <div><h4>$title</h4></div>
         <div>$address</div>
         <div>$etos</div>
         <hr>
         <div>$fees</div>
     </div>
-    <div class='content-right'>
+    <div class='col-xs-2 nopadding'>
         <br />
         <br />
         <br />
         <br />
         <br />
-        <br />
-        <div>
 ";
 more_info_modal($post_info);
 echo "
-        </div>
     </div>
 </div>
 ";
