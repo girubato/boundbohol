@@ -76,6 +76,13 @@
 -->
 				
 		</div>
+
+        <div id="pricing-sidebar-id">
+            <?php
+                get_pricing_sidebar();
+            ?>
+        </div>
+
 </div> <!-- class="col-sm-6" -->
 
 

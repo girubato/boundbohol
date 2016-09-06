@@ -26,6 +26,12 @@ if (!is_numeric($post_info['pg_id'])) {
 if (!is_numeric($post_info['vg_id'])) {
     $post_info['vg_id'] = 0;
 }
+$atib = '&nbsp;';
+$total_amount_id = 'total-amount-post-id-' . $post_info['post_id'];
+if (empty($fees)) {
+    $fees = the_custom_amount_meta($cat, $post_info['post_id'], $total_amount_id, true);
+    $atib = "<button onclick='add_to_itinerary(\"$cat\", \"{$post_info['post_id']}\");' type='button' class='btn btn-primary'>Add to<br>Itinerary</button>";
+}
 
 echo "
     </div>
@@ -37,14 +43,16 @@ echo "
         <div>$fees</div>
     </div>
     <div class='col-xs-2 nopadding'>
+        <div id='$total_amount_id'></div>
+        <div>$atib</div>
         <br />
         <br />
         <br />
-        <br />
-        <br />
+        <div>
 ";
-more_info_modal($post_info);
+more_info_modal($post_info, $cat, $total_amount_id, $atib);
 echo "
+        </div>
     </div>
 </div>
 ";

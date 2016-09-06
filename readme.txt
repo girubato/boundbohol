@@ -111,3 +111,17 @@ Use
 3. Remember the id given in the shortcode and input it in the Photo Gallery Id or Video Gallery Id fields in their respective posts.
 
 --------------------------------------------------------------------------------------
+
+Required Plugin - WP Session Manager
+  -- Prototype session management for WordPress.
+  -- Version 1.1.2 | By Eric Mann
+1. Install the plugin normally using the Add New feature in Plugins page.
+
+--------------------------------------------------------------------------------------
+
+How to add fees in a Post
+1. Add a Custom Field
+  -- Name = fee_format:type:name:label:value
+  -- Value = please look at the Name for the format (e.g. number:Entrance Fee:Entrance Fee P50/person:50)
+
+--------------------------------------------------------------------------------------

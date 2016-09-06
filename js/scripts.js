@@ -1,5 +1,88 @@
 var plus_minus_num = {}, plus_minus_amount = {}, plus_minus_total_amount = {};
 
+function edit_fee(type, cat_id, post_id, key, amount) {
+    jQuery.ajax({
+        type : "post",
+        dataType : "json",
+        url : Ajax.ajaxurl,
+        data : {action: "ajax_action", m: "edit_fee", type: type, cat_id: cat_id, post_id: post_id, key: key},
+        success: function(response) {
+            if(response.success == 1) {
+                jQuery.ajax({
+                    type : "post",
+                    dataType : "json",
+                    url : Ajax.ajaxurl,
+                    data : {action: "ajax_action", m: "get_pricing_sidebar"},
+                    success: function(response) {
+                        if(response.success == 1) {
+                            plusMinusNum(type, key, amount, 'total-amount-post-id-' + post_id);
+                            jQuery('#pricing-sidebar-id').html(response.html);
+                        } else {
+                        }
+                    }
+                });
+            } else {
+            }
+        }
+    });   
+}
+
+function remove_from_itinerary(cat_id, post_id, key) {
+    jQuery.ajax({
+        type : "post",
+        dataType : "json",
+        url : Ajax.ajaxurl,
+        data : {action: "ajax_action", m: "remove_from_itinerary", cat_id: cat_id, post_id: post_id, key: key},
+        success: function(response) {
+            if(response.success == 1) {
+                jQuery.ajax({
+                    type : "post",
+                    dataType : "json",
+                    url : Ajax.ajaxurl,
+                    data : {action: "ajax_action", m: "get_pricing_sidebar"},
+                    success: function(response) {
+                        if(response.success == 1) {
+                            jQuery('#pricing-sidebar-id').html(response.html);
+                        } else {
+                        }
+                    }
+                });
+            } else {
+            }
+        }
+    });   
+}
+
+function add_to_itinerary(cat_id, post_id) {
+    var fees = {};
+    jQuery("#fees-"+post_id+" :input").each(function (e) {
+        fees[this.id] = this.value;
+    });
+    jQuery.ajax({
+        type : "post",
+        dataType : "json",
+        url : Ajax.ajaxurl,
+        data : {action: "ajax_action", m: "add_to_itinerary", cat_id: cat_id, post_id: post_id, fees: fees},
+        success: function(response) {
+            if(response.success == 1) {
+                jQuery.ajax({
+                    type : "post",
+                    dataType : "json",
+                    url : Ajax.ajaxurl,
+                    data : {action: "ajax_action", m: "get_pricing_sidebar"},
+                    success: function(response) {
+                        if(response.success == 1) {
+                            jQuery('#pricing-sidebar-id').html(response.html);
+                        } else {
+                        }
+                    }
+                });
+            } else {
+            }
+        }
+    });   
+}
+
 function plusMinusNum(type, meta_key, amount, total_amount_id) {
     var num = jQuery('#'+meta_key+'_number').attr('value');
     var total_amount = Number(jQuery('#'+total_amount_id).html().replace(/P/g, ""));
